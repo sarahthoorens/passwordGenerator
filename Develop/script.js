@@ -14,29 +14,19 @@ if (chars >= 8 || chars <= 128) {
 } else {
   alert("Your number must be between 8 and 128.");
 };
-  var password = generatePassword();
+  var password = passwordString(chars);
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+
 function generatePassword() {
   var specialChar = confirm('Click OK to confirm including special characters.');
   var lowercase = confirm('Click OK to confirm including lowercase characters?');
   var uppercase = confirm('Click OK to confirm including uppercase characters?');
   var numbers = confirm('Click OK to confirm including numbers?');
-  var userInput = [specialChar, lowercase, uppercase, numbers]
-  if (userInput = [true, true, true, true]) {
+  var userInput = [specialChar, lowercase, uppercase, numbers];
     passwordString();
   }
-  return userInput;
-};
-
-var chars = prompt('How many characters would you like your password to contain?');
-if (chars >= 8 || chars <= 128) {
-  generatePassword();
-} else {
-  alert("Your number must be between 8 and 128.");
-};
-
 
 function passwordString(length, chars) {
   var result = '';
@@ -46,7 +36,19 @@ function passwordString(length, chars) {
     return result;
 }
 
-console.log(passwordString(chars))
+
+  // return userInput;
+
+// var chars = prompt('How many characters would you like your password to contain?');
+// if (chars >= 8 || chars <= 128) {
+//   generatePassword();
+// } else {
+//   alert("Your number must be between 8 and 128.");
+// };
+
+
+
+// console.log(passwordString(chars))
 
 
 
