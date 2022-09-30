@@ -57,7 +57,8 @@ function passwordString(length, chars) {
       charset += syms;
     }
   else if (charset === '') {
-      alert('Your password must contain at least one type of character.')
+      alert('Your password must contain at least one type of character.');
+      generatePassword();
     } 
   for (var i = 0; i < length; i++) {
       result += charset[Math.floor(Math.random() * charset.length)];
