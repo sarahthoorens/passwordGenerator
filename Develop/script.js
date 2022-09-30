@@ -17,8 +17,8 @@ function writePassword() {
     generatePassword();
   } 
   else {
-    alert("Your number must be between 8 and 128.");
-    writePassword();
+    alert("Your number must be between 8 and 128."); 
+    return;
   };
   var password = passwordString(chars);
   var passwordText = document.querySelector("#password");
@@ -58,7 +58,7 @@ function passwordString(length, chars) {
     }
   else if (charset === '') {
       alert('Your password must contain at least one type of character.');
-      generatePassword();
+     generatePassword();
     } 
   for (var i = 0; i < length; i++) {
       result += charset[Math.floor(Math.random() * charset.length)];
