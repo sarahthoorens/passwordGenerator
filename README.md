@@ -47,9 +47,9 @@ This was the js started code I was provided for this challenge.
 
 These are small snippets of the error messages handled by else if conditionals for user input that does not meet the input requirements of 8-128 characters and at least one type of character chosen. 
 
-<img src="/Assets/error message 1.png" alt="error message out of range">
+<img src="/Assets/images/error message 1.png" alt="error message out of range">
 
-<img src="/Assets/error message 2.png" alt="error message for no characters chosen">
+<img src="/Assets/images/error message 2.png" alt="error message for no characters chosen">
 </br>
 
 **Challenges**
