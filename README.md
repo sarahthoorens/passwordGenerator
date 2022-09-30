@@ -40,7 +40,7 @@ THEN the password is either displayed in an alert or written to the page
 ```
 This was the js started code I was provided for this challenge.
 ```
-<img src="/Assets/js provided.png" alt="snapshot of js started code">
+<img src="/Assets/images/js provided.png" alt="snapshot of js started code">
 
 ## Project Review
 
