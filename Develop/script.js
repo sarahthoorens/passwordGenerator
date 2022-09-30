@@ -4,58 +4,69 @@ var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button 
 generateBtn.addEventListener("click", writePassword);
 
+// Define global variables
+var specialChar  
+var lowercase 
+var uppercase 
+var numbers 
+
 // Write password to the #password input
 function writePassword() {
   var chars = prompt('How many characters would you like your password to contain?');
   if (chars >= 8 && chars <= 128) { 
     generatePassword();
-  } else {
-    alert("Your number must be between 8 and 128.")
+  } 
+  else {
+    alert("Your number must be between 8 and 128.");
     writePassword();
   };
-  var password = generatePassword(chars);
+  var password = passwordString(chars);
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
   console.log(password); 
   }
 
-// Prompts user to choose what characters to include in the password 
-function generatePassword(length, chars) {
-  var specialChar = confirm('Click OK to confirm including special characters.'); 
-  var lowercase = confirm('Click OK to confirm including lowercase characters.');
-  var uppercase = confirm('Click OK to confirm including uppercase characters.');
-  var numbers = confirm('Click OK to confirm including numbers.');
-  
-  // Creates the random string based on chars input and length
-  var result = '';
+// Prompts user to choose what characters to include in the password
+function generatePassword() {
+  specialChar = confirm('Click OK to include special characters.'); 
+  lowercase = confirm('Click OK to include lowercase characters.');
+  uppercase = confirm('Click OK to include uppercase characters.');
+  numbers = confirm('Click OK to include numbers.'); 
+  passwordString();
+}
+
+// Creates the random string based on chars input and length
+function passwordString(length, chars) {
+  var result = ''; 
   var charset = '';
   var nums = '0123456789';
   var lcase = 'abcdefghijklmnopqrstuvwxyz';
   var ucase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var syms = '!@#$%^&*()_';
+  var syms = '!@#$%^&*()_<>/|-';
+  
   if (numbers) {
     charset += nums;
   }
   if (lowercase) {
-    charset += lcase;
-  }
+      charset += lcase;
+    }
   if (uppercase) {
-    charset += ucase;
-  }
+      charset += ucase;
+    }
   if (specialChar) {
-    charset += syms;
-  }
+      charset += syms;
+    }
   else if (charset === '') {
-    alert('Your password must contain at least one type of character.')
-  };
-for (var i = 0; i < length; i++)
-    result += charset[Math.floor(Math.random() * charset.length)];
-  return result;
+      alert('Your password must contain at least one type of character.')
+    } 
+  for (var i = 0; i < length; i++) {
+      result += charset[Math.floor(Math.random() * charset.length)];
+  }
+    return result;
 }
 
 
 
-  // var charset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_'
 
 ///////////////////////////////////////////////////////////////////////
 // pseudo code:
@@ -71,3 +82,4 @@ for (var i = 0; i < length; i++)
 // Decide how to choose what characters to include
 // Randomly (Math.random) grab values from each included categories
 // Assemble password string to be returned
+  // var charset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_';
