@@ -1,7 +1,7 @@
 # passwordGenerator
 
 Deployment date: 9/29/22</br>
-Deployed address: https://sarahthoorens.github.io/passwordgenerator/</br>
+Deployed address: [https://sarahthoorens.github.io/passwordGenerator/](https://sarahthoorens.github.io/passwordGenerator/)</br>
 Topics applied: JavaScript variables, functions, for loops, conditionals and built-in base object (Math)</br>
 Project goal: Provide JavaScript code to animate the provided HTML password generator skeleton according to acceptance criteria
 
