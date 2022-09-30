@@ -6,7 +6,7 @@ Topics applied: JavaScript variables, functions, for loops, conditionals and bui
 Project goal: Provide JavaScript code to animate the provided HTML password generator skeleton according to acceptance criteria
 
 ## Project Description
-In this challenge, I was provided with an html and css file of basic code, as well as a file with starter JavaScript. The goal of the finished product is to generate a password based on user input regarding length of the password and their preference for which type of characters to include. The information provided for this challenge is as follows:
+In this challenge, I was provided with html and css files of basic code, as well as a file with starter JavaScript. The goal of the finished product was to generate a password based on user input regarding length of the password and user preference for which type of characters to include. The information provided for this challenge is as follows:
 
 ### User Story
 
@@ -37,15 +37,16 @@ THEN the password is either displayed in an alert or written to the page
 ```
 
 ## Starter code
-```
-This was the js started code I was provided for this challenge.
-```
+
+This was the js starter code I was provided for this challenge.
+
+
 <img src="/Assets/images/js provided.png" alt="snapshot of js started code">
 
 ## Project Review
 
 
-These are small snippets of the error messages handled by else if conditionals for user input that does not meet the input requirements of 8-128 characters and at least one type of character chosen. 
+These are snippets of the error messages handled by else if conditionals for user input that does not meet the input requirements of 8-128 characters and at least one type of character chosen. </br>
 
 <img src="/Assets/images/error message 1.png" alt="error message out of range">
 
