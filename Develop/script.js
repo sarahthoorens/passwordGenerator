@@ -7,37 +7,45 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
   var chars = prompt('How many characters would you like your password to contain?');
-  if (chars >= 8 || chars <= 128) { // This code is not working - currently # of chars is unlimited
+  if (chars >= 8 && chars <= 128) { 
     generatePassword();
   } else {
-    alert("Your number must be between 8 and 128.");
+    alert("Your number must be between 8 and 128.")
+    writePassword();
   };
-  var password = passwordString(chars);
+  var password = generatePassword(chars);
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
   console.log(password); 
   }
 
 // Prompts user to choose what characters to include in the password 
-function generatePassword() {
-  var specialChar = confirm('Click OK to confirm including special characters.');
-  var lowercase = confirm('Click OK to confirm including lowercase characters?');
-  var uppercase = confirm('Click OK to confirm including uppercase characters?');
-  var numbers = confirm('Click OK to confirm including numbers?');
-  var userInput = [specialChar, lowercase, uppercase, numbers];
-  passwordString();
-
-}
-// Creates the random string based on chars input and length
-// Need to adjust this code to allow for userInput elements to be False (i.e. no special characters, etc.)
-function passwordString(length, chars) {
+function generatePassword(length, chars) {
+  var specialChar = confirm('Click OK to confirm including special characters.'); 
+  var lowercase = confirm('Click OK to confirm including lowercase characters.');
+  var uppercase = confirm('Click OK to confirm including uppercase characters.');
+  var numbers = confirm('Click OK to confirm including numbers.');
+  
+  // Creates the random string based on chars input and length
   var result = '';
-  var charset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_'
-                                  // var num = '0123456789';
-                                  // var lcase = 'abcdefghijklmnopqrstuvwxyz'
-                                  // var ucase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-                                  // var char = '!@#$%^&*()_'
-                                  // var charset = [num,lcase, ucase, char];
+  var charset = '';
+  var nums = '0123456789';
+  var lcase = 'abcdefghijklmnopqrstuvwxyz';
+  var ucase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var syms = '!@#$%^&*()_';
+  if (numbers) {
+    charset += nums;
+  }
+  if (lowercase) {
+    charset += lcase;
+  }
+  if (uppercase) {
+    charset += ucase;
+  }
+  if (specialChar) {
+    charset += syms;
+  }
+  // else if (charset = '')
 for (var i = 0; i < length; i++)
     result += charset[Math.floor(Math.random() * charset.length)];
   return result;
@@ -45,6 +53,7 @@ for (var i = 0; i < length; i++)
 
 
 
+  // var charset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_'
 
 ///////////////////////////////////////////////////////////////////////
 // pseudo code:
